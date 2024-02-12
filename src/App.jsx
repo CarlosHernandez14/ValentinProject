@@ -5,6 +5,8 @@ import gif from './assets/rose-6870_512.gif';
 import video from './assets/VideoTravelEditado.mp4';
 import audio from './assets/videoplayback.m4a';
 
+import bg from './assets/bg-night.jpg';
+
 const App = () => {
   const [noCount, setNoCount] = useState(0);
 
@@ -65,7 +67,7 @@ const App = () => {
 
     questionContainer.classList.add('hidden');
 
-    document.body.style.backgroundImage = 'url("/src/assets/bg-night.jpg")';
+    document.body.style.backgroundImage = `url(${bg})`;
 
     const video = yesContainer.querySelector('video');
     if (video.paused) {
