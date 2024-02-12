@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 
+import gif from './assets/rose-6870_512.gif';
+import video from './assets/VideoTravelEditado.mp4';
+import audio from './assets/videoplayback.m4a';
+
 const App = () => {
   const [noCount, setNoCount] = useState(0);
 
-  const sound = new Audio('/src/assets/videoplayback.m4a');
+  const sound = new Audio(audio);
 
   const handleNoClick = () => {
     setNoCount(noCount + 1);
@@ -80,7 +84,7 @@ const App = () => {
   return (
     <>
       <div className='main-container' id='question-container'>
-        <img src="/src/assets/rose-6870_512.gif" alt="No se pudo cargar la imagen :(" />
+        <img src={gif} alt="No se pudo cargar la imagen :(" />
         <h1>¿Quieres ser mi valentin?</h1>
         <div className='container-buttons'>
           <button id='yes-btn' onClick={handleYesClick}>Si</button>
@@ -90,7 +94,7 @@ const App = () => {
       <div className='main-container container-extras' style={{display: 'none'}} id='yes-container'>
         <h1>Gracias por aceptar ser mi valentin</h1>
         <video controls loop autoPlay>
-          <source src="/src/assets/VideoTravelEditado.mp4" type="video/mp4" />
+          <source src={video} type="video/mp4" />
           Tu navegador no soporta el elemento de video.
         </video>
         <h1>Te amo con todo mi corazon</h1>
