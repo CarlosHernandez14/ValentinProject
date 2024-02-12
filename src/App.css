@@ -21,7 +21,7 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
+  min-height: 80vh;
   min-width: 50vw;
   background-color: #dfa8de;
   color: white;
@@ -30,6 +30,13 @@ img {
   font-family: 'Great Vibes', cursive;
   padding: 2rem;
 }
+
+.container-extras {
+  text-align: center;
+  background-color: rgba(76, 246, 246, 0.575);
+  animation: pulseContainer 2s 3;
+}
+
 
 .container-buttons {
   display: flex;
@@ -81,6 +88,18 @@ img {
   }
 }
 
+@keyframes pulseContainer {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .pulse {
   animation: pulse 2s 2;
 }
@@ -108,3 +127,48 @@ img {
   animation: shake 2s 1;
 }
 
+/* Animation transition  */
+
+#question-container, #yes-container {
+  transition: all 0.5s ease;
+}
+
+.hidden {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para los controles de video */
+video::-webkit-media-controls-panel {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilos para los botones */
+video::-webkit-media-controls-play-button,
+video::-webkit-media-controls-pause-button {
+  font-size: 24px; /* Tamaño de fuente más grande */
+  color: white; /* Color de fuente blanco */
+}
+
+/* Estilos para la barra de progreso */
+video::-webkit-media-controls-timeline {
+  height: 10px; /* Altura de la barra de progreso */
+}
+
+/* Estilos para el tiempo */
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+  font-size: 16px; /* Tamaño de fuente */
+  color: white; /* Color de fuente blanco */
+}

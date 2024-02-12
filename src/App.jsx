@@ -55,16 +55,45 @@ const App = () => {
     }
 
     sound.play();
+
+    const questionContainer = document.getElementById('question-container');
+    const yesContainer = document.getElementById('yes-container');
+
+    questionContainer.classList.add('hidden');
+
+    document.body.style.backgroundImage = 'url("/src/assets/bg-night.jpg")';
+
+    const video = yesContainer.querySelector('video');
+    if (video.paused) {
+      video.play();
+    }
+
+    setTimeout(() => {
+      questionContainer.style.display = 'none';
+      yesContainer.style.display = 'block';
+
+      yesContainer.offsetWidth;
+      yesContainer.classList.remove('hidden');
+    }, 500);
+
   }
   return (
     <>
-      <div className='main-container'>
-        <img src="/src/assets/mocha3.gif" alt="No se pudo cargar la imagen :(" />
+      <div className='main-container' id='question-container'>
+        <img src="/src/assets/rose-6870_512.gif" alt="No se pudo cargar la imagen :(" />
         <h1>¿Quieres ser mi valentin?</h1>
         <div className='container-buttons'>
           <button id='yes-btn' onClick={handleYesClick}>Si</button>
           <button id='no-btn' onClick={handleNoClick}>No</button>
         </div>
+      </div>
+      <div className='main-container container-extras' style={{display: 'none'}} id='yes-container'>
+        <h1>Gracias por aceptar ser mi valentin</h1>
+        <video controls loop autoPlay>
+          <source src="/src/assets/VideoTravelEditado.mp4" type="video/mp4" />
+          Tu navegador no soporta el elemento de video.
+        </video>
+        <h1>Te amo con todo mi corazon</h1>
       </div>
     </>
   )

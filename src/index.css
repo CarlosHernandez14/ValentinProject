@@ -7,6 +7,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #ffffff;
   background-image: url('/src/assets/balloon-10392.gif');
+  background-size: 100em;
   /*background-size: cover; */
 
   font-synthesis: none;
